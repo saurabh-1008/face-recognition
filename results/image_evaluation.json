@@ -1,0 +1,1034 @@
+{
+  "created_at": "2026-10-08T04:52:37.658224+00:00",
+  "threshold": 0.5,
+  "provider": "CPUExecutionProvider",
+  "det_size": [
+    640,
+    640
+  ],
+  "det_threshold": 0.5,
+  "platform": "Windows-10-10.0.26300-SP0",
+  "versions": {
+    "insightface": "2.1",
+    "onnxruntime": "1.30.0",
+    "numpy": "2.4.6",
+    "opencv-python": "5.0.0.93"
+  },
+  "timing": "Single pass after synthetic warm-up; decode, detection and recognition included.",
+  "images": [
+    {
+      "filename": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+      "sha256": "9c7d68c7f241eb3ab91316e77c0590d6a37326512eec9e8b7614a53fb068e8e0"
+    },
+    {
+      "filename": "IMG-20250224-WA0003.jpg",
+      "sha256": "46c5af58a9b5e796e564a2ce420dde2981f503292b29824c5448c22398dc8eeb"
+    },
+    {
+      "filename": "IMG_20250926_105517.jpg",
+      "sha256": "2242bc4acba8bafd41c44338d99a0a766907c0770f417d9c6cff34a82f99a8bd"
+    },
+    {
+      "filename": "IMG_20251213_193020.jpg",
+      "sha256": "8ed324029cd93d14e5a29c82e138e74f0b18b06a564f3e8792ffeda89a668687"
+    },
+    {
+      "filename": "OIP (1).jpeg",
+      "sha256": "a7566fbbb1d5ee447feb908835d04ec175714540e9aa8e70c38fe466ae1f73c8"
+    },
+    {
+      "filename": "OIP.jpeg",
+      "sha256": "461c46c45dc246dca9996b899c614e535d62587ccec84786e21e2cbe72c6ceb5"
+    },
+    {
+      "filename": "SAVE_20260908_223839.jpg",
+      "sha256": "76371d5eacc567eb789a69edb37850ef7dea69d1886b7e9b06bd0f24ffb89b5c"
+    }
+  ],
+  "models": {
+    "buffalo_l": {
+      "images": [
+        {
+          "filename": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "model": "buffalo_l",
+          "success": true,
+          "width": 2048,
+          "height": 2048,
+          "face_count": 1,
+          "detection_scores": [
+            0.7503103017807007
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.5543955000002825
+        },
+        {
+          "filename": "IMG-20250224-WA0003.jpg",
+          "model": "buffalo_l",
+          "success": false,
+          "width": 808,
+          "height": 988,
+          "face_count": 0,
+          "detection_scores": [],
+          "failure": "no_face_detected",
+          "seconds": 0.29336740000053396
+        },
+        {
+          "filename": "IMG_20250926_105517.jpg",
+          "model": "buffalo_l",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8759491443634033
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.5444899000003716
+        },
+        {
+          "filename": "IMG_20251213_193020.jpg",
+          "model": "buffalo_l",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8580710887908936
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.5496256000005815
+        },
+        {
+          "filename": "OIP (1).jpeg",
+          "model": "buffalo_l",
+          "success": true,
+          "width": 250,
+          "height": 379,
+          "face_count": 1,
+          "detection_scores": [
+            0.8269659280776978
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.41470180000032997
+        },
+        {
+          "filename": "OIP.jpeg",
+          "model": "buffalo_l",
+          "success": true,
+          "width": 250,
+          "height": 377,
+          "face_count": 1,
+          "detection_scores": [
+            0.7918539643287659
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.4414013999994495
+        },
+        {
+          "filename": "SAVE_20260908_223839.jpg",
+          "model": "buffalo_l",
+          "success": true,
+          "width": 2304,
+          "height": 4096,
+          "face_count": 1,
+          "detection_scores": [
+            0.8903001546859741
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.4750875999998243
+        }
+      ],
+      "pairs": [
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG-20250224-WA0003.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "scored",
+          "similarity": 0.5445795059204102,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.5013699531555176,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.07190749049186707,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.028426337987184525,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.5414780378341675,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.7598923444747925,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.11268302798271179,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.14541395008563995,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.6323697566986084,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.03325130417943001,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.09303648769855499,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.6576547622680664,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.10309251397848129,
+          "match": false
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": -0.013058066368103027,
+          "match": false
+        },
+        {
+          "image_a": "OIP.jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.11267434060573578,
+          "match": false
+        }
+      ],
+      "successful_images": 6,
+      "failed_images": 1,
+      "labelled_scored_pairs": 6,
+      "accuracy": 1.0
+    },
+    "buffalo_m": {
+      "images": [
+        {
+          "filename": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "model": "buffalo_m",
+          "success": true,
+          "width": 2048,
+          "height": 2048,
+          "face_count": 1,
+          "detection_scores": [
+            0.706432044506073
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.31534520000059274
+        },
+        {
+          "filename": "IMG-20250224-WA0003.jpg",
+          "model": "buffalo_m",
+          "success": false,
+          "width": 808,
+          "height": 988,
+          "face_count": 0,
+          "detection_scores": [],
+          "failure": "no_face_detected",
+          "seconds": 0.08972520000043005
+        },
+        {
+          "filename": "IMG_20250926_105517.jpg",
+          "model": "buffalo_m",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8388158082962036
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.29673100000036357
+        },
+        {
+          "filename": "IMG_20251213_193020.jpg",
+          "model": "buffalo_m",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8226282596588135
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.32088260000000446
+        },
+        {
+          "filename": "OIP (1).jpeg",
+          "model": "buffalo_m",
+          "success": true,
+          "width": 250,
+          "height": 379,
+          "face_count": 1,
+          "detection_scores": [
+            0.8347923755645752
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.21674710000024788
+        },
+        {
+          "filename": "OIP.jpeg",
+          "model": "buffalo_m",
+          "success": true,
+          "width": 250,
+          "height": 377,
+          "face_count": 1,
+          "detection_scores": [
+            0.7892508506774902
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.22093300000051386
+        },
+        {
+          "filename": "SAVE_20260908_223839.jpg",
+          "model": "buffalo_m",
+          "success": true,
+          "width": 2304,
+          "height": 4096,
+          "face_count": 1,
+          "detection_scores": [
+            0.8828753232955933
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.29338039999947796
+        }
+      ],
+      "pairs": [
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG-20250224-WA0003.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "scored",
+          "similarity": 0.5532581210136414,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.5280088186264038,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.062284987419843674,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.03938530012965202,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.5551057457923889,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.758662223815918,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.08736856281757355,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.14865568280220032,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.6148108839988708,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.0371420755982399,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.09484696388244629,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.639665961265564,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.09883379936218262,
+          "match": false
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": -0.009059499949216843,
+          "match": false
+        },
+        {
+          "image_a": "OIP.jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.10122352838516235,
+          "match": false
+        }
+      ],
+      "successful_images": 6,
+      "failed_images": 1,
+      "labelled_scored_pairs": 6,
+      "accuracy": 1.0
+    },
+    "buffalo_s": {
+      "images": [
+        {
+          "filename": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "model": "buffalo_s",
+          "success": true,
+          "width": 2048,
+          "height": 2048,
+          "face_count": 1,
+          "detection_scores": [
+            0.7252995371818542
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.1853240000000369
+        },
+        {
+          "filename": "IMG-20250224-WA0003.jpg",
+          "model": "buffalo_s",
+          "success": false,
+          "width": 808,
+          "height": 988,
+          "face_count": 0,
+          "detection_scores": [],
+          "failure": "no_face_detected",
+          "seconds": 0.05297770000015589
+        },
+        {
+          "filename": "IMG_20250926_105517.jpg",
+          "model": "buffalo_s",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8351590633392334
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.1553524999999354
+        },
+        {
+          "filename": "IMG_20251213_193020.jpg",
+          "model": "buffalo_s",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8046526908874512
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.1555175000003146
+        },
+        {
+          "filename": "OIP (1).jpeg",
+          "model": "buffalo_s",
+          "success": true,
+          "width": 250,
+          "height": 379,
+          "face_count": 1,
+          "detection_scores": [
+            0.8009709119796753
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.056675199999517645
+        },
+        {
+          "filename": "OIP.jpeg",
+          "model": "buffalo_s",
+          "success": true,
+          "width": 250,
+          "height": 377,
+          "face_count": 1,
+          "detection_scores": [
+            0.763149082660675
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.050420600000506965
+        },
+        {
+          "filename": "SAVE_20260908_223839.jpg",
+          "model": "buffalo_s",
+          "success": true,
+          "width": 2304,
+          "height": 4096,
+          "face_count": 1,
+          "detection_scores": [
+            0.8414479494094849
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.13134119999995164
+        }
+      ],
+      "pairs": [
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG-20250224-WA0003.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "scored",
+          "similarity": 0.4665483832359314,
+          "match": false,
+          "same_person": true,
+          "correct": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.5135497450828552,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.04635494947433472,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.11433098465204239,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.4833486080169678,
+          "match": false,
+          "same_person": true,
+          "correct": false
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.6949855089187622,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.06881816685199738,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.18006804585456848,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.5188358426094055,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.11653244495391846,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.11259578168392181,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.5531063079833984,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.12954366207122803,
+          "match": false
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": -0.01134457066655159,
+          "match": false
+        },
+        {
+          "image_a": "OIP.jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.09991772472858429,
+          "match": false
+        }
+      ],
+      "successful_images": 6,
+      "failed_images": 1,
+      "labelled_scored_pairs": 6,
+      "accuracy": 0.6666666666666666
+    },
+    "buffalo_sc": {
+      "images": [
+        {
+          "filename": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "model": "buffalo_sc",
+          "success": true,
+          "width": 2048,
+          "height": 2048,
+          "face_count": 1,
+          "detection_scores": [
+            0.7252995371818542
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.15949240000009013
+        },
+        {
+          "filename": "IMG-20250224-WA0003.jpg",
+          "model": "buffalo_sc",
+          "success": false,
+          "width": 808,
+          "height": 988,
+          "face_count": 0,
+          "detection_scores": [],
+          "failure": "no_face_detected",
+          "seconds": 0.05217420000008133
+        },
+        {
+          "filename": "IMG_20250926_105517.jpg",
+          "model": "buffalo_sc",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8351590633392334
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.15469819999998435
+        },
+        {
+          "filename": "IMG_20251213_193020.jpg",
+          "model": "buffalo_sc",
+          "success": true,
+          "width": 3456,
+          "height": 4608,
+          "face_count": 1,
+          "detection_scores": [
+            0.8046526908874512
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.16107370000008814
+        },
+        {
+          "filename": "OIP (1).jpeg",
+          "model": "buffalo_sc",
+          "success": true,
+          "width": 250,
+          "height": 379,
+          "face_count": 1,
+          "detection_scores": [
+            0.8009709119796753
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.04638760000034381
+        },
+        {
+          "filename": "OIP.jpeg",
+          "model": "buffalo_sc",
+          "success": true,
+          "width": 250,
+          "height": 377,
+          "face_count": 1,
+          "detection_scores": [
+            0.763149082660675
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.0495799000000261
+        },
+        {
+          "filename": "SAVE_20260908_223839.jpg",
+          "model": "buffalo_sc",
+          "success": true,
+          "width": 2304,
+          "height": 4096,
+          "face_count": 1,
+          "detection_scores": [
+            0.8414479494094849
+          ],
+          "embedding_dimension": 512,
+          "seconds": 0.14477509999960603
+        }
+      ],
+      "pairs": [
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG-20250224-WA0003.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "scored",
+          "similarity": 0.4665483832359314,
+          "match": false,
+          "same_person": true,
+          "correct": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.5135497450828552,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.04635494947433472,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.11433098465204239,
+          "match": false
+        },
+        {
+          "image_a": "83ea0662-9151-4ed9-857e-96c9d5fa6a3e.png",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.4833486080169678,
+          "match": false,
+          "same_person": true,
+          "correct": false
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20250926_105517.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG-20250224-WA0003.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "not_scored_extraction_failed"
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "IMG_20251213_193020.jpg",
+          "status": "scored",
+          "similarity": 0.6949855089187622,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.06881816685199738,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.18006804585456848,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20250926_105517.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.5188358426094055,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP (1).jpeg",
+          "status": "scored",
+          "similarity": -0.11653244495391846,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.11259578168392181,
+          "match": false
+        },
+        {
+          "image_a": "IMG_20251213_193020.jpg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.5531063079833984,
+          "match": true,
+          "same_person": true,
+          "correct": true
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "OIP.jpeg",
+          "status": "scored",
+          "similarity": 0.12954366207122803,
+          "match": false
+        },
+        {
+          "image_a": "OIP (1).jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": -0.01134457066655159,
+          "match": false
+        },
+        {
+          "image_a": "OIP.jpeg",
+          "image_b": "SAVE_20260908_223839.jpg",
+          "status": "scored",
+          "similarity": 0.09991772472858429,
+          "match": false
+        }
+      ],
+      "successful_images": 6,
+      "failed_images": 1,
+      "labelled_scored_pairs": 6,
+      "accuracy": 0.6666666666666666
+    }
+  }
+}

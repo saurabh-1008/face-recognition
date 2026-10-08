@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+data/embeddings/users.json
+data/embeddings/*.npy
+data/images/

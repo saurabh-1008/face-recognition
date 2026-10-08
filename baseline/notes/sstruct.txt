@@ -1,0 +1,26 @@
+                    Input image/video
+                           │
+                           ▼
+                    Face detection
+                           │
+                           ▼
+                      MiniFASNet
+                           │
+                    ┌──────┴──────┐
+                    │             │
+                  SPOOF          REAL
+                    │             │
+                  REJECT          ▼
+                            InsightFace
+                                 │
+                                 ▼
+                         Face embedding
+                                 │
+                                 ▼
+                         Database search
+                                 │
+                       ┌─────────┴─────────┐
+                       │                   │
+                    MATCH                NO MATCH
+                       │                   │
+                    ACCEPT              REJECT

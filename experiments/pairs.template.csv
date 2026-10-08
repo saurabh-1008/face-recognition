@@ -1,0 +1,3 @@
+image_a,image_b,same_person
+../data/images/person_001_enroll.jpg,../data/images/person_001_probe.jpg,1
+../data/images/person_001_enroll.jpg,../data/images/person_002_probe.jpg,0

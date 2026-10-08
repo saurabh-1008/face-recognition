@@ -1,0 +1,14 @@
+CDAC m-governance face verification research
+
+Image -> face detection + alignment -> normalized 512-value embedding
+Registration -> data/embeddings/users.json -> user ID + name + model-specific embeddings
+Verification -> same model -> cosine similarity -> threshold -> match/no match
+
+baseline/          Original scripts retained as evidence (do not run for new experiments)
+scripts/           core.py, main.py (registration), verify.py, compare.py
+experiments/       Sanity pairs and labelled evaluation CSV template
+results/           Generated model comparison reports
+reports/           Baseline issue and research protocol
+data/embeddings/   JSON user database, schema example and legacy NPY files
+data/images/       Face images used for enrollment and experiments
+.venv/insightface/  Downloaded model archives and model files
