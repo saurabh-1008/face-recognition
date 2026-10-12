@@ -36,14 +36,55 @@ def normalize(vector):
     return vector / length
 
 
-def extract(app, path):
+def capture_webcam_frame(camera_index=0, cv2_module=None):
+    """Show a webcam preview and return the frame selected with Space."""
+    if cv2_module is None:
+        import cv2 as cv2_module
+
+    camera = cv2_module.VideoCapture(camera_index)
+    try:
+        if not camera.isOpened():
+            raise ValueError(f"Cannot open webcam {camera_index}")
+        while True:
+            success, frame = camera.read()
+            if not success or frame is None:
+                raise ValueError(f"Cannot read frame from webcam {camera_index}")
+
+            preview = frame.copy()
+            cv2_module.putText(
+                preview,
+                "SPACE: capture   Q/ESC: cancel",
+                (20, 35),
+                cv2_module.FONT_HERSHEY_SIMPLEX,
+                0.7,
+                (0, 255, 0),
+                2,
+                cv2_module.LINE_AA,
+            )
+            cv2_module.imshow("Face capture", preview)
+            key = cv2_module.waitKey(1) & 0xFF
+            if key == ord(" "):
+                return frame
+            if key in (ord("q"), ord("Q"), 27):
+                raise ValueError("Webcam capture cancelled")
+    finally:
+        camera.release()
+        cv2_module.destroyAllWindows()
+
+
+def extract(app, source):
     import cv2
-    image = cv2.imread(str(Path(path).resolve()))
-    if image is None:
-        raise ValueError(f"Cannot read image: {path}")
+    if isinstance(source, np.ndarray):
+        image = source
+        source_name = "webcam frame"
+    else:
+        image = cv2.imread(str(Path(source).resolve()))
+        source_name = source
+        if image is None:
+            raise ValueError(f"Cannot read image: {source}")
     faces = app.get(image)
     if len(faces) != 1:
-        raise ValueError(f"Expected exactly one face in {path}; found {len(faces)}")
+        raise ValueError(f"Expected exactly one face in {source_name}; found {len(faces)}")
     return normalize(faces[0].embedding)
 
 

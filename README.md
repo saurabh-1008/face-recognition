@@ -2,6 +2,28 @@
 
 I am comparing four InsightFace Buffalo model packs for an image-based identity verification baseline. I store user embeddings in JSON and evaluate detection, verification scores, storage and processing time.
 
+## Run the application
+
+From the project root, install the dependencies and start the interactive CLI:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe cli.py
+```
+
+The menu provides these options:
+
+1. Register using an image
+2. Register using the webcam
+3. Verify using an image
+4. Verify using the webcam
+
+Verification runs MiniFASNet liveness detection before InsightFace. Before verifying, install the
+two anti-spoofing model files described in the
+**[complete setup instructions](docs/RUNNING.md)**. At model and threshold prompts, press Enter to
+use the displayed defaults.
+
 ## Start here for review
 
 **[Open my evaluation report](reports/IMAGE_EVALUATION.md)** ? per-image successes and failures, same-person pair scores and graphs.

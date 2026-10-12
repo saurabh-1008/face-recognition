@@ -9,16 +9,62 @@ python -m venv .venv
 
 Requirements record the versions already installed in this project's environment. All commands below use that environment. Model packs download on first use under `.venv/insightface/models/`; initialization may require internet. Existing local l/s packs have been copied there. If a download fails, read the report error and install the complete official pack under that directory before retrying.
 
+Verification also requires these two files from
+[`facenox/face-antispoof-onnx`](https://github.com/facenox/face-antispoof-onnx/tree/main/models):
+
+- `models/minifasnet/best_model_quantized.onnx`
+- `models/minifasnet/detector_quantized.onnx`
+
+The ONNX files are intentionally excluded from Git. Download them from the linked Apache-2.0
+project before verification. The default liveness threshold is `0.5`; calibrate it against
+representative real users and print/screen attacks before deployment.
+
 ## Register and verify
+
+For the interactive menu, run:
+
+```powershell
+.\.venv\Scripts\python.exe cli.py
+```
+
+Enter a menu number to register or verify using either an image or the webcam. Press Enter at the
+model and threshold prompts to accept the displayed defaults.
+
+Register from an existing photo:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/main.py --user-id user_001 --name ResearchParticipant --image data/images/IMG_20251213_193020.jpg --model buffalo_l
-.\.venv\Scripts\python.exe scripts/verify.py --user-id user_001 --image data/images/IMG_20251213_193020.jpg --model buffalo_l
 ```
+
+Register from webcam 0:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/main.py --user-id user_001 --name ResearchParticipant --webcam --model buffalo_l
+```
+
+Verify using either a photo or webcam 0:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/verify.py --user-id user_001 --image data/images/IMG_20251213_193020.jpg --model buffalo_l
+.\.venv\Scripts\python.exe scripts/verify.py --user-id user_001 --webcam --model buffalo_l
+```
+
+The `--image` and `--webcam` options are alternatives, so supply exactly one. In the webcam preview, press `Space` to capture the current frame. Press `Q` or `Esc` to cancel. A capture is accepted for face processing only when exactly one face is detected. If the user is already registered for that model, add `--replace` to the registration command to replace the stored embedding.
 
 The database is created at `data/embeddings/users.json`. Users have a name and an embeddings dictionary keyed by model. Each entry contains a vector and UTC creation time. Use `--replace` to explicitly update an existing registration. Legacy NPY files are kept in `data/embeddings/` and are not imported because they lack model provenance. Face images are kept in `data/images/`. Paths to input images are relative to your shell; the database and model paths always resolve from the repository.
 
-Verification is one-to-one against the supplied ID. Default threshold 0.5 is experimental and must be calibrated; similarity is not a probability. Exactly one detected face is required.
+Verification is one-to-one against the supplied ID. Before InsightFace is loaded, the image is
+checked by MiniFASNet. Only one complete face is allowed, and a spoof decision or any liveness
+error rejects the request without calculating an embedding or similarity. The output reports the
+MiniFASNet real-face probability separately from the InsightFace cosine similarity. Adjust the
+liveness gate with `--liveness-threshold`; custom ONNX paths can be supplied with
+`--liveness-model` and `--liveness-detector`.
+
+The default InsightFace threshold 0.5 is experimental and must be calibrated; similarity is not a
+probability. The captured webcam frame is processed in memory and is not saved by this application.
+MiniFASNet is passive, single-frame liveness detection: it improves resistance to print and screen
+replay attacks but does not make this production-grade authentication. Use challenge-response or
+depth/IR checks for stronger protection.
 
 ## Compare models
 
