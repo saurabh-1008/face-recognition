@@ -21,6 +21,10 @@ representative real users and print/screen attacks before deployment.
 
 ## Register and verify
 
+For selectable MiniFASNet, MobileNetV3 and TinyLiveness experiments, choose CLI option **5** or
+use the shared `scripts/test_liveness.py --model ...` runner. See
+[model selection and reports](LIVENESS_TESTING.md) for installation, inputs and examples.
+
 For the interactive menu, run:
 
 ```powershell

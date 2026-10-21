@@ -129,7 +129,8 @@ class WebcamCaptureTests(unittest.TestCase):
         status, result = capture_result(fake_cv2)
 
         self.assertEqual(status, "error")
-        self.assertEqual(result, "ValueError: Cannot open webcam 0")
+        self.assertIn("ValueError: Cannot open webcam 0", result)
+        self.assertIn("Close other camera apps", result)
         self.assertTrue(capture.released)
         self.assertTrue(fake_cv2.destroyed)
 

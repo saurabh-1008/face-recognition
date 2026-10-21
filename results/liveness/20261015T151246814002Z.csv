@@ -1,0 +1,93 @@
+sample,seconds,label,lighting,attack,real_probability,single_decision,error,inference_ms,window_count,window_mean,window_live_fraction,mean_decision,vote_decision
+1,0.531,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,35.357,0,,,PENDING,PENDING
+2,0.765,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,19.605,0,,,PENDING,PENDING
+3,1.031,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.864,0,,,PENDING,PENDING
+4,1.234,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.747,0,,,PENDING,PENDING
+5,1.437,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.946,0,,,PENDING,PENDING
+6,1.719,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.523,0,,,PENDING,PENDING
+7,1.922,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.958,0,,,PENDING,PENDING
+8,2.125,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.456,0,,,PENDING,PENDING
+9,2.344,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.002,0,,,PENDING,PENDING
+10,2.547,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.462,0,,,PENDING,PENDING
+11,2.75,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.026,0,,,PENDING,PENDING
+12,2.953,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.514,0,,,PENDING,PENDING
+13,3.234,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.99,0,,,PENDING,PENDING
+14,3.437,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.647,0,,,PENDING,PENDING
+15,3.64,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,18.096,0,,,PENDING,PENDING
+16,3.844,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.969,0,,,PENDING,PENDING
+17,4.047,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.239,0,,,PENDING,PENDING
+18,4.328,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.152,0,,,PENDING,PENDING
+19,4.531,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.545,0,,,PENDING,PENDING
+20,4.734,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.803,0,,,PENDING,PENDING
+21,4.937,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.499,0,,,PENDING,PENDING
+22,5.14,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.813,0,,,PENDING,PENDING
+23,5.344,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.381,0,,,PENDING,PENDING
+24,5.547,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.787,0,,,PENDING,PENDING
+25,5.75,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.174,0,,,PENDING,PENDING
+26,5.953,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.972,0,,,PENDING,PENDING
+27,6.156,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.918,0,,,PENDING,PENDING
+28,6.359,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.997,0,,,PENDING,PENDING
+29,6.562,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.58,0,,,PENDING,PENDING
+30,6.765,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.358,0,,,PENDING,PENDING
+31,7.031,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.982,0,,,PENDING,PENDING
+32,7.234,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.348,0,,,PENDING,PENDING
+33,7.437,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.928,0,,,PENDING,PENDING
+34,7.64,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.435,0,,,PENDING,PENDING
+35,7.844,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,14.885,0,,,PENDING,PENDING
+36,8.047,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.629,0,,,PENDING,PENDING
+37,8.265,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.413,0,,,PENDING,PENDING
+38,8.531,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.662,0,,,PENDING,PENDING
+39,8.734,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.063,0,,,PENDING,PENDING
+40,8.937,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.398,0,,,PENDING,PENDING
+41,9.14,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.898,0,,,PENDING,PENDING
+42,9.344,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,18.146,0,,,PENDING,PENDING
+43,9.547,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.936,0,,,PENDING,PENDING
+44,9.75,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,18.174,0,,,PENDING,PENDING
+45,9.953,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.076,0,,,PENDING,PENDING
+46,10.156,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.952,0,,,PENDING,PENDING
+47,10.359,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.867,0,,,PENDING,PENDING
+48,10.562,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.281,0,,,PENDING,PENDING
+49,10.765,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.109,0,,,PENDING,PENDING
+50,11.031,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,25.263,0,,,PENDING,PENDING
+51,11.234,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,21.366,0,,,PENDING,PENDING
+52,11.437,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,18.4,0,,,PENDING,PENDING
+53,11.64,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.398,0,,,PENDING,PENDING
+54,11.844,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.814,0,,,PENDING,PENDING
+55,12.047,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.04,0,,,PENDING,PENDING
+56,12.25,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.482,0,,,PENDING,PENDING
+57,12.453,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.248,0,,,PENDING,PENDING
+58,12.672,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.36,0,,,PENDING,PENDING
+59,12.875,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.702,0,,,PENDING,PENDING
+60,13.14,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.437,0,,,PENDING,PENDING
+61,13.344,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.003,0,,,PENDING,PENDING
+62,13.547,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.748,0,,,PENDING,PENDING
+63,13.75,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.041,0,,,PENDING,PENDING
+64,13.984,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.185,0,,,PENDING,PENDING
+65,14.187,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.846,0,,,PENDING,PENDING
+66,14.39,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.76,0,,,PENDING,PENDING
+67,14.594,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.181,0,,,PENDING,PENDING
+68,14.797,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.118,0,,,PENDING,PENDING
+69,15.0,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,15.854,0,,,PENDING,PENDING
+70,15.203,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.161,0,,,PENDING,PENDING
+71,15.453,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.041,0,,,PENDING,PENDING
+72,15.672,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.678,0,,,PENDING,PENDING
+73,15.875,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,16.325,0,,,PENDING,PENDING
+74,16.109,live,front,none,0.020004131090212242,SPOOF,,31.05,1,0.020004131090212242,0.0,PENDING,PENDING
+75,16.328,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.164,0,,,PENDING,PENDING
+76,16.531,live,front,none,0.04110516154527368,SPOOF,,30.822,1,0.04110516154527368,0.0,PENDING,PENDING
+77,16.75,live,front,none,0.4292845552357324,SPOOF,,29.488,2,0.23519485839050303,0.0,PENDING,PENDING
+78,16.953,live,front,none,0.016513564819723405,SPOOF,,35.532,3,0.1623010938669098,0.0,PENDING,PENDING
+79,17.156,live,front,none,0.3060192049436263,SPOOF,,32.691,4,0.19823062163608893,0.0,PENDING,PENDING
+80,17.359,live,front,none,0.05204724618471641,SPOOF,,32.798,5,0.16899394654581443,0.0,PENDING,PENDING
+81,17.562,live,front,none,0.25747711288765285,SPOOF,,32.92,6,0.18374114093612084,0.0,PENDING,PENDING
+82,17.781,live,front,none,0.2437066447023342,SPOOF,,32.351,7,0.19230764147415133,0.0,PENDING,PENDING
+83,18.047,live,front,none,0.1211967734203745,SPOOF,,33.099,8,0.1834187829674292,0.0,PENDING,PENDING
+84,18.25,live,front,none,0.2658892569485907,SPOOF,,26.173,9,0.19258216896533603,0.0,PENDING,PENDING
+85,18.453,live,front,none,0.5537763563460569,LIVE,,27.156,10,0.22870158770340812,0.1,PENDING,PENDING
+86,18.656,live,front,none,0.17766500295777937,SPOOF,,27.925,11,0.22406189818107825,0.09090909090909091,PENDING,PENDING
+87,18.875,live,front,none,0.3167754493978316,SPOOF,,33.695,12,0.23178802744914104,0.08333333333333333,PENDING,PENDING
+88,19.156,live,front,none,0.9220767683327362,LIVE,,28.098,13,0.28488716136326375,0.15384615384615385,PENDING,PENDING
+89,19.359,live,front,none,0.7646893716547837,LIVE,,27.932,14,0.319158747812658,0.21428571428571427,PENDING,PENDING
+90,19.562,live,front,none,0.912313847239722,LIVE,,28.589,15,0.35870242110779565,0.26666666666666666,SPOOF,SPOOF
+91,19.765,live,front,none,,ERROR,Expected exactly one complete face for liveness; found 0,17.878,0,,,PENDING,PENDING
+92,19.969,live,front,none,0.9879570103652962,LIVE,,28.265,1,0.9879570103652962,1.0,PENDING,PENDING

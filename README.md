@@ -18,6 +18,18 @@ The menu provides these options:
 2. Register using the webcam
 3. Verify using an image
 4. Verify using the webcam
+5. Test a selected liveness model and generate reports
+6. List liveness models
+
+Liveness experiments share one runner for `minifasnet`, `anti-spoof-mn3` (MobileNetV3), and
+`tinyliveness` (EfficientNet-B0). Choose option **5**, or run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/test_liveness.py --model anti-spoof-mn3 --webcam --label spoof --attack phone-photo --lighting front
+```
+
+Each run saves CSV scores, a JSON summary and a readable Markdown report under `results/liveness/`.
+See [model selection and installation](docs/LIVENESS_TESTING.md).
 
 Verification runs MiniFASNet liveness detection before InsightFace. Before verifying, install the
 two anti-spoofing model files described in the
@@ -25,6 +37,10 @@ two anti-spoofing model files described in the
 use the displayed defaults.
 
 ## Start here for review
+
+For lighting and temporal liveness experiments with the selectable models, see
+[the liveness test guide](docs/LIVENESS_TESTING.md). It compares single-frame, rolling-mean,
+and rolling-vote decisions on a webcam or video, and also supports single-image tests.
 
 **[Open my evaluation report](reports/IMAGE_EVALUATION.md)** ? per-image successes and failures, same-person pair scores and graphs.
 

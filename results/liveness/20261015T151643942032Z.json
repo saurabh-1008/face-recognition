@@ -1,0 +1,49 @@
+{
+  "config": {
+    "webcam": true,
+    "video": null,
+    "camera": 0,
+    "label": "spoof",
+    "lighting": "front",
+    "attack": "phone-photo",
+    "seconds": 20,
+    "sample_fps": 5,
+    "window": 15,
+    "threshold": 0.5,
+    "live_fraction": 0.8,
+    "no_preview": false,
+    "output": null,
+    "liveness_model": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\best_model_quantized.onnx",
+    "liveness_detector": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx"
+  },
+  "stopped": "duration",
+  "metrics": {
+    "samples": 92,
+    "errors": 17,
+    "single": {
+      "live": 66,
+      "spoof": 9,
+      "pending_or_error": 17,
+      "decided": 75,
+      "false_live_rate_on_decided": 0.88,
+      "false_spoof_rate_on_decided": null
+    },
+    "mean": {
+      "live": 53,
+      "spoof": 0,
+      "pending_or_error": 39,
+      "decided": 53,
+      "false_live_rate_on_decided": 1.0,
+      "false_spoof_rate_on_decided": null
+    },
+    "vote": {
+      "live": 39,
+      "spoof": 14,
+      "pending_or_error": 39,
+      "decided": 53,
+      "false_live_rate_on_decided": 0.7358490566037735,
+      "false_spoof_rate_on_decided": null
+    }
+  },
+  "note": "Overlapping windows are correlated. These rates are descriptive, not trial-level APCER/BPCER."
+}

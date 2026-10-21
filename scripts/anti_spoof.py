@@ -42,17 +42,18 @@ def _read_rgb(source, cv2_module):
 def _load_detector(model_path, cv2_module):
     path = Path(model_path)
     if not path.is_file():
-        raise LivenessError(f"MiniFASNet face detector is missing: {path}")
+        raise LivenessError(f"YuNet face detector is missing: {path}")
     try:
         return cv2_module.FaceDetectorYN.create(
             str(path), "", (320, 320), 0.8, 0.3, 5000
         )
     except Exception as error:
-        raise LivenessError(f"Could not load MiniFASNet face detector: {error}") from error
+        raise LivenessError(f"Could not load YuNet face detector: {error}") from error
 
 
 def _detect_one_face(
-    image, detector, cv2_module, margin=5, min_face_size=60, max_dimension=640
+    image, detector, cv2_module, margin=5, min_face_size=60, max_dimension=640,
+    return_landmarks=False,
 ):
     height, width = image.shape[:2]
     scale = min(1.0, max_dimension / max(height, width))
@@ -72,6 +73,7 @@ def _detect_one_face(
         raise LivenessError(f"MiniFASNet face detection failed: {error}") from error
 
     valid = []
+    landmarks = []
     for face in [] if faces is None else faces:
         x, y, face_width, face_height = (face[:4] / scale).astype(int)
         inside = (
@@ -82,11 +84,13 @@ def _detect_one_face(
         )
         if inside and face_width >= min_face_size and face_height >= min_face_size:
             valid.append((x, y, x + face_width, y + face_height))
+            if return_landmarks:
+                landmarks.append(np.asarray(face[4:14], dtype=np.float32).reshape(5, 2) / scale)
     if len(valid) != 1:
         raise LivenessError(
             f"Expected exactly one complete face for liveness; found {len(valid)}"
         )
-    return valid[0]
+    return (valid[0], landmarks[0]) if return_landmarks else valid[0]
 
 
 def _expanded_square_crop(image, bbox, cv2_module, expansion=1.5):
@@ -133,7 +137,7 @@ def _preprocess(face_crop, cv2_module, size=MODEL_IMAGE_SIZE):
 def _load_liveness_session(model_path, ort_module):
     path = Path(model_path)
     if not path.is_file():
-        raise LivenessError(f"MiniFASNet liveness model is missing: {path}")
+        raise LivenessError(f"ONNX liveness model is missing: {path}")
     try:
         options = ort_module.SessionOptions()
         options.graph_optimization_level = ort_module.GraphOptimizationLevel.ORT_ENABLE_ALL
@@ -142,7 +146,7 @@ def _load_liveness_session(model_path, ort_module):
             str(path), sess_options=options, providers=["CPUExecutionProvider"]
         )
     except Exception as error:
-        raise LivenessError(f"Could not load MiniFASNet liveness model: {error}") from error
+        raise LivenessError(f"Could not load ONNX liveness model: {error}") from error
     return session
 
 
@@ -153,6 +157,8 @@ def check_liveness(
     detector_model=DETECTOR_MODEL,
     cv2_module=None,
     ort_module=None,
+    detector=None,
+    session=None,
 ):
     """Return a liveness decision for one face, failing closed on any error."""
     if not 0 < threshold < 1:
@@ -163,11 +169,13 @@ def check_liveness(
         import onnxruntime as ort_module
 
     image, _ = _read_rgb(source, cv2_module)
-    detector = _load_detector(detector_model, cv2_module)
+    if detector is None:
+        detector = _load_detector(detector_model, cv2_module)
     bbox = _detect_one_face(image, detector, cv2_module)
     crop = _expanded_square_crop(image, bbox, cv2_module)
     tensor = _preprocess(crop, cv2_module)
-    session = _load_liveness_session(liveness_model, ort_module)
+    if session is None:
+        session = _load_liveness_session(liveness_model, ort_module)
 
     try:
         input_name = session.get_inputs()[0].name

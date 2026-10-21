@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import numpy as np
+from camera_io import open_webcam
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL_ROOT = ROOT / ".venv" / "insightface"
@@ -41,10 +42,9 @@ def capture_webcam_frame(camera_index=0, cv2_module=None):
     if cv2_module is None:
         import cv2 as cv2_module
 
-    camera = cv2_module.VideoCapture(camera_index)
+    camera = None
     try:
-        if not camera.isOpened():
-            raise ValueError(f"Cannot open webcam {camera_index}")
+        camera = open_webcam(camera_index, cv2_module=cv2_module)
         while True:
             success, frame = camera.read()
             if not success or frame is None:
@@ -68,7 +68,8 @@ def capture_webcam_frame(camera_index=0, cv2_module=None):
             if key in (ord("q"), ord("Q"), 27):
                 raise ValueError("Webcam capture cancelled")
     finally:
-        camera.release()
+        if camera is not None:
+            camera.release()
         cv2_module.destroyAllWindows()
 
 

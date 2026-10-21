@@ -1,0 +1,81 @@
+{
+  "report_version": 2,
+  "config": {
+    "webcam": true,
+    "video": null,
+    "image": null,
+    "model": "minifasnet",
+    "list_models": false,
+    "decision": "vote",
+    "camera": 0,
+    "camera_backend": "auto",
+    "label": "live",
+    "lighting": "front",
+    "attack": "none",
+    "seconds": 20.0,
+    "sample_fps": 5,
+    "window": 15,
+    "threshold": 0.5,
+    "live_fraction": 0.8,
+    "no_preview": false,
+    "output": null,
+    "liveness_model": null,
+    "liveness_detector": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx"
+  },
+  "model": {
+    "name": "minifasnet",
+    "title": "MiniFASNet V2 SE (current baseline)",
+    "path": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\best_model_quantized.onnx",
+    "sha256": "fde20585635cae62ed1d41796f76b6f8bc4b92cd91ec1cf0f1bc6485d2d587a9",
+    "source": "https://github.com/facenox/face-antispoof-onnx",
+    "threshold": 0.5,
+    "default_threshold": 0.5,
+    "output_kind": "two_logits",
+    "crop": "1.5x square; legacy RGB detector input",
+    "detector_path": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx",
+    "detector_sha256": "49f000ec501fef24739071fc7e68267d32209045b6822c0c72dce1da25726f10",
+    "input_size": 128,
+    "provider": "CPUExecutionProvider",
+    "adapter_version": 1,
+    "opencv_version": "5.0.0",
+    "onnxruntime_version": "1.30.0",
+    "registered_release": true,
+    "camera_backend": "DSHOW"
+  },
+  "result": {
+    "decision": "INCONCLUSIVE",
+    "method": "vote",
+    "basis": "Last sampled frame/window at end of run; labels never affect prediction",
+    "last_real_probability": null
+  },
+  "stopped": "duration",
+  "metrics": {
+    "samples": 87,
+    "errors": 6,
+    "single": {
+      "live": 76,
+      "spoof": 5,
+      "pending_or_error": 6,
+      "decided": 81,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 0.06172839506172839
+    },
+    "mean": {
+      "live": 67,
+      "spoof": 0,
+      "pending_or_error": 20,
+      "decided": 67,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 0.0
+    },
+    "vote": {
+      "live": 67,
+      "spoof": 0,
+      "pending_or_error": 20,
+      "decided": 67,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 0.0
+    }
+  },
+  "note": "Overlapping windows are correlated. These rates are descriptive, not trial-level APCER/BPCER."
+}

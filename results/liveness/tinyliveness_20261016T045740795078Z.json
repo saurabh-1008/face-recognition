@@ -1,0 +1,81 @@
+{
+  "report_version": 2,
+  "config": {
+    "webcam": true,
+    "video": null,
+    "image": null,
+    "model": "tinyliveness",
+    "list_models": false,
+    "decision": "vote",
+    "camera": 0,
+    "camera_backend": "auto",
+    "label": "live",
+    "lighting": "front",
+    "attack": "none",
+    "seconds": 20.0,
+    "sample_fps": 5,
+    "window": 15,
+    "threshold": 0.99,
+    "live_fraction": 0.8,
+    "no_preview": false,
+    "output": null,
+    "liveness_model": null,
+    "liveness_detector": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx"
+  },
+  "model": {
+    "name": "tinyliveness",
+    "title": "TinyLiveness EfficientNet-B0",
+    "path": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\tinyliveness\\tinyliveness_main_apcer1_224.onnx",
+    "sha256": "fbf9258f27b6b597c8fc8767a1add930628fe90b396126b15171b7f54985c670",
+    "source": "https://github.com/yuvrajraina/TinyLiveness/tree/8d92198e7ee122f39b2585e691a3d9450ca0cb0f",
+    "threshold": 0.99,
+    "default_threshold": 0.99,
+    "output_kind": "live_probability",
+    "crop": "YuNet five-point similarity alignment to 224px ArcFace template; BGR detector input",
+    "detector_path": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx",
+    "detector_sha256": "49f000ec501fef24739071fc7e68267d32209045b6822c0c72dce1da25726f10",
+    "input_size": 224,
+    "provider": "CPUExecutionProvider",
+    "adapter_version": 1,
+    "opencv_version": "5.0.0",
+    "onnxruntime_version": "1.30.0",
+    "registered_release": true,
+    "camera_backend": "DSHOW"
+  },
+  "result": {
+    "decision": "SPOOF",
+    "method": "vote",
+    "basis": "Last sampled frame/window at end of run; labels never affect prediction",
+    "last_real_probability": 0.4895763695240021
+  },
+  "stopped": "duration",
+  "metrics": {
+    "samples": 87,
+    "errors": 3,
+    "single": {
+      "live": 0,
+      "spoof": 84,
+      "pending_or_error": 3,
+      "decided": 84,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 1.0
+    },
+    "mean": {
+      "live": 0,
+      "spoof": 69,
+      "pending_or_error": 18,
+      "decided": 69,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 1.0
+    },
+    "vote": {
+      "live": 0,
+      "spoof": 69,
+      "pending_or_error": 18,
+      "decided": 69,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 1.0
+    }
+  },
+  "note": "Overlapping windows are correlated. These rates are descriptive, not trial-level APCER/BPCER."
+}

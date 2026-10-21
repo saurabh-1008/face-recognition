@@ -1,0 +1,81 @@
+{
+  "report_version": 2,
+  "config": {
+    "webcam": true,
+    "video": null,
+    "image": null,
+    "model": "anti-spoof-mn3",
+    "list_models": false,
+    "decision": "vote",
+    "camera": 0,
+    "camera_backend": "auto",
+    "label": "live",
+    "lighting": "front",
+    "attack": "none",
+    "seconds": 20.0,
+    "sample_fps": 5,
+    "window": 15,
+    "threshold": 0.5,
+    "live_fraction": 0.8,
+    "no_preview": false,
+    "output": null,
+    "liveness_model": null,
+    "liveness_detector": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx"
+  },
+  "model": {
+    "name": "anti-spoof-mn3",
+    "title": "MobileNetV3 / CelebA-Spoof",
+    "path": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\anti-spoof-mn3\\anti-spoof-mn3.onnx",
+    "sha256": "c4c99af04603b62d7e44f6f4daeb33e0daeccc696008c0b1d62f6f5cebbb3262",
+    "source": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/anti-spoof-mn3",
+    "threshold": 0.5,
+    "default_threshold": 0.5,
+    "output_kind": "two_probabilities",
+    "crop": "bounding box expanded 1.1x horizontally, 1.05x vertically; BGR detector input",
+    "detector_path": "C:\\Users\\kumar\\OneDrive\\Desktop\\cdac\\models\\minifasnet\\detector_quantized.onnx",
+    "detector_sha256": "49f000ec501fef24739071fc7e68267d32209045b6822c0c72dce1da25726f10",
+    "input_size": 128,
+    "provider": "CPUExecutionProvider",
+    "adapter_version": 1,
+    "opencv_version": "5.0.0",
+    "onnxruntime_version": "1.30.0",
+    "registered_release": true,
+    "camera_backend": "DSHOW"
+  },
+  "result": {
+    "decision": "INCONCLUSIVE",
+    "method": "vote",
+    "basis": "Last sampled frame/window at end of run; labels never affect prediction",
+    "last_real_probability": 0.7589908838272095
+  },
+  "stopped": "duration",
+  "metrics": {
+    "samples": 86,
+    "errors": 8,
+    "single": {
+      "live": 34,
+      "spoof": 44,
+      "pending_or_error": 8,
+      "decided": 78,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 0.5641025641025641
+    },
+    "mean": {
+      "live": 14,
+      "spoof": 37,
+      "pending_or_error": 35,
+      "decided": 51,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 0.7254901960784313
+    },
+    "vote": {
+      "live": 0,
+      "spoof": 51,
+      "pending_or_error": 35,
+      "decided": 51,
+      "false_live_rate_on_decided": null,
+      "false_spoof_rate_on_decided": 1.0
+    }
+  },
+  "note": "Overlapping windows are correlated. These rates are descriptive, not trial-level APCER/BPCER."
+}

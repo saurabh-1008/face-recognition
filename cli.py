@@ -12,6 +12,7 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 from anti_spoof import check_liveness  # noqa: E402
+from liveness_models import MODEL_SPECS, list_models  # noqa: E402
 from core import (  # noqa: E402
     MODELS,
     capture_webcam_frame,
@@ -53,6 +54,50 @@ def ask_threshold(label, default, minimum, maximum, inclusive=False):
     if not valid:
         raise ValueError(f"{label} must be between {minimum} and {maximum}")
     return result
+
+
+LIGHTING_OPTIONS = (
+    ("unspecified", "Not recorded / unsure"),
+    ("front", "Light facing you"),
+    ("side", "Light from one side"),
+    ("dim", "Low light / dark room"),
+    ("backlit", "Bright light or window behind you"),
+    ("diffuse", "Soft, even light with weak shadows"),
+    ("overhead", "Light from above"),
+    ("mixed", "Light from several different sources"),
+    ("daylight", "Natural daylight"),
+)
+ATTACK_OPTIONS = (
+    ("none", "Real person; no attack"),
+    ("phone-photo", "Still face photo displayed on a phone"),
+    ("print", "Printed face photo / paper"),
+    ("replay", "Face video playing on a phone or screen"),
+    ("monitor-photo", "Still face photo displayed on a computer screen"),
+    ("mask", "Face mask / 3D presentation"),
+    ("unknown", "Attack type not known"),
+)
+
+
+def ask_annotation(label, options, default):
+    """Choose a readable condition while retaining stable report values."""
+    print(f"\n{label} (recorded in the report):")
+    default_index = next(i for i, (value, _) in enumerate(options, 1) if value == default)
+    for index, (value, description) in enumerate(options, 1):
+        suffix = " (default)" if value == default else ""
+        print(f"  {index}. {value}: {description}{suffix}")
+    other_index = len(options) + 1
+    print(f"  {other_index}. Other: enter your own description")
+    while True:
+        value = input(f"Choose {label.lower()} [{default_index}]: ").strip()
+        if not value:
+            return default
+        if value.lower() in ("other", str(other_index)):
+            return ask_required(f"Describe {label.lower()}")
+        if value.isdigit() and 1 <= int(value) <= len(options):
+            return options[int(value) - 1][0]
+        if value.lower() in {key for key, _ in options}:
+            return value.lower()
+        print(f"Choose a number from 1 to {other_index}, an option name, or Other.")
 
 
 def get_source(use_webcam):
@@ -121,11 +166,60 @@ def verify_user(use_webcam=False):
     print("\nMATCH" if score >= similarity_threshold else "\nNO MATCH")
 
 
+def test_liveness():
+    """Choose an anti-spoofing model and generate a shared experiment report."""
+    from test_liveness import build_parser, run
+
+    print("\n--- Liveness model test ---")
+    names = list(MODEL_SPECS)
+    for index, name in enumerate(names, 1):
+        spec = MODEL_SPECS[name]
+        status = "installed" if spec.path.is_file() else "needs download"
+        print(f"  {index}. {name}: {spec.title} ({status})")
+    value = input("Choose liveness model [1]: ").strip() or "1"
+    if value.isdigit() and 1 <= int(value) <= len(names):
+        name = names[int(value) - 1]
+    elif value in MODEL_SPECS:
+        name = value
+    else:
+        raise ValueError("Invalid liveness model selection")
+    if not MODEL_SPECS[name].path.is_file():
+        raise ValueError(f"Install this model first: python scripts/liveness_models.py --download {name}")
+    source = input("Source: 1 webcam, 2 image, 3 video [1]: ").strip() or "1"
+    arguments = ["--model", name]
+    if source == "1":
+        camera = int(input("Camera number [0]: ").strip() or "0")
+        arguments += ["--webcam", "--camera", str(camera)]
+    elif source in ("2", "3"):
+        arguments += ["--image" if source == "2" else "--video", ask_required("File path")]
+    else:
+        raise ValueError("Invalid source selection")
+    label = input("Known ground truth: live / spoof / unknown [unknown]: ").strip().lower() or "unknown"
+    if label not in ("live", "spoof", "unknown"):
+        raise ValueError("Ground truth must be live, spoof or unknown")
+    lighting = ask_annotation("Lighting", LIGHTING_OPTIONS, "unspecified")
+    attack = ask_annotation("Attack type", ATTACK_OPTIONS, "unknown" if label == "spoof" else "none")
+    arguments += ["--label", label, "--lighting", lighting, "--attack", attack]
+    threshold = ask_threshold("Liveness threshold", MODEL_SPECS[name].threshold, 0.0, 1.0)
+    arguments += ["--threshold", str(threshold)]
+    if source != "2":
+        seconds = input("Duration in seconds [20]: ").strip() or "20"
+        size = input("Rolling window in samples [15]: ").strip() or "15"
+        rule = input("Final decision rule: single / mean / vote [vote]: ").strip() or "vote"
+        if rule not in ("single", "mean", "vote"):
+            raise ValueError("Decision rule must be single, mean or vote")
+        # Validate numeric entries before handing them to the argument parser.
+        arguments += ["--seconds", str(float(seconds)), "--window", str(int(size)), "--decision", rule]
+    run(build_parser().parse_args(arguments))
+
+
 MENU = {
     "1": ("Register using an image", lambda: register_user(use_webcam=False)),
     "2": ("Register using the webcam", lambda: register_user(use_webcam=True)),
     "3": ("Verify using an image", lambda: verify_user(use_webcam=False)),
     "4": ("Verify using the webcam", lambda: verify_user(use_webcam=True)),
+    "5": ("Test a liveness model and generate reports", test_liveness),
+    "6": ("List liveness models", list_models),
 }
 
 
@@ -147,7 +241,7 @@ def main():
             return
         route = MENU.get(choice)
         if route is None:
-            print("Invalid option. Enter a number from 0 to 4.")
+            print("Invalid option. Choose one of the displayed menu numbers.")
             continue
         try:
             route[1]()

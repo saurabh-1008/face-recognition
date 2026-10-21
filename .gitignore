@@ -5,3 +5,4 @@ data/embeddings/users.json
 data/embeddings/*.npy
 data/images/
 models/minifasnet/*.onnx
+models/**/*.onnx
